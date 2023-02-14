@@ -1,0 +1,24 @@
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+
+.logo-title {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #8E58E7;
+    font-size: 20px;
+}
+
+.btn-login {
+    background-color: #131423;
+    color: white;
+    padding: 8px 30px;
+    border-radius: 50px;
+    font-size: 14px;
+}
