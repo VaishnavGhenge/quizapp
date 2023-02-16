@@ -1,7 +1,6 @@
 import { useState } from "react"
 import Navbar from "../Navbar/Navbar"
 import "./Home.css"
-
 export default function Home() {
     const [overlay, setOverlay] = useState(false)
 
