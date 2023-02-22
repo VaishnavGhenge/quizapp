@@ -3,7 +3,6 @@ import './App.css'
 import Leaderboard from './Leaderboard/Leaderboard'
 import Question from './Question/Question'
 import Dashboard from './Dashboard/Dashboard'
-import Leaderboard from './Leaderboard/Leaderboard'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
