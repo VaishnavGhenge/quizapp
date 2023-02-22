@@ -1,8 +1,9 @@
 import Home from './Home/Home'
 import './App.css'
-import Leaderboard from './leaderboard/Leaderboard'
+import Leaderboard from './Leaderboard/Leaderboard'
 import Question from './Question/Question'
 import Dashboard from './Dashboard/Dashboard'
+import Leaderboard from './Leaderboard/Leaderboard'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
@@ -17,6 +18,15 @@ function App() {
 
           <Route exact path="/question">
             <Question />
+          </Route>
+
+          
+          <Route exact path="/leaderboard">
+            <Leaderboard />
+          </Route>
+
+          <Route exact path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
       </Router>
