@@ -22,9 +22,7 @@ function App() {
             <Dashboard />
           </Route>
 
-          <Route exact path="/leaderboard">
-            <Leaderboard />
-          </Route>
+          
         </Switch>
       </Router>
     </div>
