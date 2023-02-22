@@ -1,5 +1,6 @@
 import Home from './Home/Home'
 import './App.css'
+import Leaderboard from './leaderboard/Leaderboard'
 import Question from './Question/Question'
 import Dashboard from './Dashboard/Dashboard'
 
@@ -17,12 +18,6 @@ function App() {
           <Route exact path="/question">
             <Question />
           </Route>
-
-          <Route exact path="/dashboard">
-            <Dashboard />
-          </Route>
-
-          
         </Switch>
       </Router>
     </div>
