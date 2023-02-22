@@ -10,10 +10,10 @@ export default function Home() {
         <div>
             {login && <div className="overlay"></div>}
             {login && <Login setLogin={setLogin} />}
-            <Navbar setLogin={setLogin} />
+            <Navbar setLogin={setLogin} purpose="home" />
             <div className="hero">
                 <div className="hero-text">
-                    Create and share quiz made easy
+                    Creating and conducting quiz made easy
                 </div>
                 <div className="hero-btns">
                     <button className="btn-quiz">Create quiz</button>

@@ -1,11 +1,8 @@
-body {
-    font-family: 'Inter', sans-serif;
-}
-
 .nav {
     display: flex;
     justify-content: space-between;
-    padding: 1rem 3rem;
+    align-items: center;
+    padding: 1.6rem 3rem 1rem 3rem;
 }
 
 .logo-title {
@@ -19,7 +16,31 @@ body {
     background-color: #131423;
     color: white;
     cursor: pointer;
-    padding: 8px 30px;
+    padding: 12px 30px;
     border-radius: 50px;
     font-size: 14px;
+    border: none;
+}
+
+.avatar-div {
+    height: 40.8px;
+    width: 40.8px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar:hover {
+    /* -webkit-filter: brightness(70%); */
+    filter: brightness(80%);
+    -webkit-transition: all 100ms ease;
+    -moz-transition: all 100ms ease;
+    -o-transition: all 100ms ease;
+    -ms-transition: all 100ms ease;
+    transition: all 100ms ease;
 }

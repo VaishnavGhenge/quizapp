@@ -1,0 +1,11 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+hr {
+    border: 0;
+    color: #D9D9D9;
+    border-top: 1px solid;
+    opacity: .7;
+}

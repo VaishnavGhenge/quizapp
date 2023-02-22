@@ -1,11 +1,15 @@
 import "./Navbar.css"
+import avatar from "../assets/profile.webp"
 
 export default function Navbar(props) {
     return (
         <div className="Navbar">
             <div className="nav">
                 <div className="logo-title">quizzical</div>
-                <button className="btn-login" onClick={() => props.setLogin(prev => !prev)}>Login</button>
+                {props.purpose === "home" && <button className="btn-login" onClick={() => props.setLogin(pre => !pre)}>Login</button>}
+                {props.purpose === "dashboard" && <div className="avatar-div">
+                    <img src={avatar} alt="profile image" className="avatar" />
+                </div>}
             </div>
             <hr />
         </div>
