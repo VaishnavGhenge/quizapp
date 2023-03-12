@@ -1,9 +1,10 @@
 import "./Login.css"
 import close from "../assets/close-line.svg"
+import google from "../assets/google-fill.svg"
 
 export default function Login(props) {
     return (
-        <div className="Login">
+        <div className="Login" style={{'display': props.display, 'opacity': props.display === 'block'? '1' : '0'}}>
             <div className="login-box">
                 <div className="top">
                     <img src={close} alt="close icon" className="close-icon" onClick={() => props.setLogin(false)} />
@@ -17,14 +18,18 @@ export default function Login(props) {
                             <input type="password" name="passowrd" id="password" className="input-box" placeholder="Password" />
                         </div>
                         <div className="btn-div">
-                            <button className="btn-login-form">
-                                Login
-                            </button>
-                            <button className="btn-login-with">
-                                Login with
-                            </button>
+                            <div className="btn-login-form">
+                                <span>Login</span>
+                            </div>
+                            <div className="btn-login-with">
+                                <span>Login with</span>
+                                <img src={google} className="google-logo" alt="google icon" />
+                            </div>
                         </div>
                     </form>
+                    <div className="login-footer">
+                        <p className="signup-link">New here? <span>create new account</span></p>
+                    </div>
                 </div>
             </div>
         </div>

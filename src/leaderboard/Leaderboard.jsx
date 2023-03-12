@@ -3,6 +3,7 @@ import './Leaderboard.css'
 import rank1 from "../assets/rank1.png"
 import rank2 from "../assets/rank2.png"
 import rank3 from "../assets/rank3.png"
+
 const Leaderboard = () => {
     const participants = [
         {
@@ -31,7 +32,7 @@ const Leaderboard = () => {
                     </div>
                 </div>
                 <div className="winner w-card">
-                <img src={rank1} alt="" className="ranks" />
+                    <img src={rank1} alt="" className="ranks" />
                     <div className="pts">
                         1029
                     </div>
@@ -40,7 +41,7 @@ const Leaderboard = () => {
                     </div>
                 </div>
                 <div className="runner2 w-card">
-                <img src={rank3} alt="" className="ranks" />
+                    <img src={rank3} alt="" className="ranks" />
                     <div className="pts">
                         1029
                     </div>

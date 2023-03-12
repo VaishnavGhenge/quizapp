@@ -8,7 +8,7 @@ import question_ic from "../assets/questionnaire-line.svg"
 const Question = () => {
 
     return (
-        <>
+        <div className="Question">
             <Navbar />
             <div className="question-div">
                 <div className="q-top">
@@ -22,13 +22,13 @@ const Question = () => {
                 </div>
                 <hr />
                 <div className="qbody">
-                    <div className="q-text">Q. What Software Company is Headquartered in Redmond, Washington? Microsoft</div>
+                    <div className="q-text">Q. What is the smallest country in the world by land area?</div>
                     <div className="qnote">Choose one of the following answers</div>
                     <div className="options">
-                        <div className="option"><div className="option-no">A.</div>Come from the Cognac region of France</div>
-                        <div className="option"><div className="option-no">B.</div>Come from the Cognac region of France come from the Cognac region of France come from the Cognac region of France</div>
-                        <div className="option"><div className="option-no">C.</div>Come from the Cognac region of France</div>
-                        <div className="option"><div className="option-no">D.</div>Come from the Cognac region of France</div>
+                        <div className="option"><div className="option-no">A.</div>Vatican City</div>
+                        <div className="option"><div className="option-no">B.</div>Monaco</div>
+                        <div className="option"><div className="option-no">C.</div>Liechtenstein</div>
+                        <div className="option"><div className="option-no">D.</div>San Marino</div>
                     </div>
                     <div className="qfooter">
                         <div className="nextbtn">
@@ -38,7 +38,7 @@ const Question = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 
 

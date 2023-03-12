@@ -8,8 +8,8 @@ export default function Home() {
 
     return (
         <div>
-            {login && <div className="overlay"></div>}
-            {login && <Login setLogin={setLogin} />}
+            <div className="overlay" style={{ 'display': login ? 'block' : 'none' }}></div>
+            <Login setLogin={setLogin} display={ login ? 'block' : 'none' } />
             <Navbar setLogin={setLogin} purpose="home" />
             <div className="hero">
                 <div className="hero-text">
