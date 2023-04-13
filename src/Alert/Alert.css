@@ -1,0 +1,28 @@
+.Alert {
+    color: white;
+    line-height: 1.5;
+    padding: 14px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.success {
+    background-color: #009900;
+}
+
+.error {
+    background-color: #ff3333;
+}
+
+.warning {
+    background-color: #ffd11a;
+}
+
+.Alert p {
+    margin: 0;
+}
+
+.Alert ul {
+    margin: 0;
+}

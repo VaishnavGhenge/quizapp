@@ -4,6 +4,7 @@ import Leaderboard from './Leaderboard/Leaderboard'
 import Question from './Question/Question'
 import Dashboard from './Dashboard/Dashboard'
 import CreateQuiz from './CreateQuiz/CreateQuiz'
+import Signup from './Signup/Signup'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
@@ -20,7 +21,6 @@ function App() {
             <Question />
           </Route>
 
-          
           <Route exact path="/leaderboard">
             <Leaderboard />
           </Route>
@@ -32,6 +32,11 @@ function App() {
           <Route exact path="/create-quiz">
             <CreateQuiz />
           </Route>
+
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+
         </Switch>
       </Router>
     </div>

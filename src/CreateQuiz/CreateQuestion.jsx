@@ -22,12 +22,12 @@ export default function CreateQuestion(props) {
             </div>
             <div className="create-options">
                 <div className="option-group">
-                    <input className="create-option" type="text" name="option-1" value={data["option-1"]} onChange={handleChange} placeholder="Option 1" />
-                    <input className="create-option" type="text" name="option-2" value={data["option-2"]} onChange={handleChange} placeholder="Option 2" />
+                    <input className="create-option" type="text" name="option-1" value={data["option-1"]} onChange={handleChange} placeholder="Option A" />
+                    <input className="create-option" type="text" name="option-2" value={data["option-2"]} onChange={handleChange} placeholder="Option B" />
                 </div>
                 <div className="option-group">
-                    <input className="create-option" type="text" name="option-3" value={data["option-3"]} onChange={handleChange} placeholder="Option 3" />
-                    <input className="create-option" type="text" name="option-4" value={data["option-4"]} onChange={handleChange} placeholder="Option 4" />
+                    <input className="create-option" type="text" name="option-3" value={data["option-3"]} onChange={handleChange} placeholder="Option C" />
+                    <input className="create-option" type="text" name="option-4" value={data["option-4"]} onChange={handleChange} placeholder="Option D" />
                 </div>
             </div>
         </div>

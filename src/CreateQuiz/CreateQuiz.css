@@ -1,5 +1,5 @@
 .CreateQuestion {
-    background-color: white;
+    background-color: #FFFFFF;
     border: solid 1px #D9D9D9;
     padding: 10px 30px;
     border-radius: 5px;
@@ -15,7 +15,7 @@
 }
 
 .quiz-details {
-    background-color: #FFFFFF;
+    background-color: #f0e9fc;
     border: solid 1px #D9D9D9;
     width: 95vw;
     border-radius: 5px;
@@ -24,7 +24,7 @@
 .quiz-title {
     text-align: center;
     margin-top: 2rem;
-    color: #131423;
+    color: #5e548e;
     margin: 15px;
 }
 
@@ -62,7 +62,7 @@ div.input-group > * {
     margin: 20px auto;
     padding: 10px 15px;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.5;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
     box-sizing: border-box;
@@ -86,7 +86,7 @@ div.input-group > * {
     margin: 10px 5px;
     padding: 10px 15px;
     font-size: 15px;
-    line-height: 1.8;
+    line-height: 1.5;
     border: 1px solid #D9D9D9;
     border-radius: 5px;
     box-sizing: border-box;
@@ -113,7 +113,8 @@ div.input-group > * {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px 30px;
+    padding: 10px 30px;
+    line-height: 1.5;
     border-radius: 5px;
     margin-bottom: 1rem;
     cursor: default;

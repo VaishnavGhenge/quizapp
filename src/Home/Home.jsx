@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div>
             {page != "/" && <Redirect to={page} />}
-            <div className="overlay" style={{ 'display': login ? 'block' : 'none' }}></div>
+            <div className="overlay" style={{ 'display': login ? 'block' : 'none' }} onClick={() => setLogin(false)}></div>
             <Login setLogin={setLogin} display={ login ? 'block' : 'none' } />
             <Navbar setLogin={setLogin} purpose="home" />
             <div className="hero">
