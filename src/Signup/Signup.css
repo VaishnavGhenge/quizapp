@@ -1,5 +1,5 @@
 .signup-form {
-    width: 50vw;
+    max-width: 40vw;
     margin: auto auto;
     margin-top: 5vh;
 }
@@ -35,8 +35,16 @@ label {
     outline: none;
 }
 
-.password-rules {
+.input-rule {
     font-size: 12px;
+}
+
+.inp-success {
+  color: #009900;
+}
+
+.inp-error {
+  color: #ff3333;
 }
 
 .signup-button-group {

@@ -57,7 +57,7 @@ export default function Login(props) {
                 })
         }
         catch (error) {
-            setFormState({ state: "error", message: (error.response.data.message || error.message) });
+            setFormState({ state: "error", message: (error.response.data.messag || error.message) });
         }
     }
 
