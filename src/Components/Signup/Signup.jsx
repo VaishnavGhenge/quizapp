@@ -4,13 +4,13 @@ import { useState } from "react"
 import google from "../assets/google-fill.svg"
 import Alert from "../Alert/Alert"
 import axios from "../../axiosConfig"
+import { createUserApi } from "../../api/auth"
 
 export default function Signup() {
     const [formData, setFormData] = useState({ name: "", username: "", password1: "", password2: "" })
     const [formState, setFormState] = useState({ state: "normal", messages: {} })
     const [usernameState, setUsernameState] = useState({ state: "normal", message: "Username should contain atleast 4 characters" })
 
-    // under developemnt
     async function isValidUsername(username) {
         const usernameRegex = /^[a-zA-Z0-9_]+$/
         username = username.trim()
@@ -95,11 +95,7 @@ export default function Signup() {
         if (Object.keys(validationErrors).length === 0) {
             // Submit the form
             // console.log(formData)
-            await axios.post("users/create/", {
-                name: formData.name,
-                username: formData.username,
-                password: formData.password1
-            })
+            createUserApi({ name: formData.name, username: formData.username, password: formData.password1 })
                 .then(res => res.data)
                 .then(data => {
                     setFormState({ state: "success", messages: { form: "Account creation successful!" } })

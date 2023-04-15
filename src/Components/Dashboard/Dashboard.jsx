@@ -2,8 +2,14 @@ import "./Dashboard.css"
 import Navbar from "../Navbar/Navbar"
 import add from "../assets/add.svg"
 import download from "../assets/download-line.svg"
+import { logoutAsync } from "../../Redux/auth"
+import { useSelector } from "react-redux"
+import { Redirect } from "react-router-dom"
+import { useDispatch } from "react-redux"
 
 export default function Dashboard(props) {
+    const state = useSelector(state => state.auth)
+    const dispatch = useDispatch()
     const prevQuiz = [
         {
             'id': 1,
@@ -28,6 +34,15 @@ export default function Dashboard(props) {
 
     ]
 
+    if(!state.user) {
+        return <Redirect to="/" />
+    }
+
+    function handleLogout() {
+        console.log(state.user)
+        dispatch(logoutAsync(state.user))
+    }
+
     return (
         <div className="Dashboard">
             <Navbar purpose="dashboard" />
@@ -47,6 +62,9 @@ export default function Dashboard(props) {
                             <span>{quiz.name}</span>
                             <img className="icon" src={download} alt="download icon" />
                         </div>)}
+                        <div className="pre-result" onClick={handleLogout}>
+                            Logout
+                        </div>
                     </div>
                 </div>
             </div>
