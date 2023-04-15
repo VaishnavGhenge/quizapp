@@ -1,7 +1,7 @@
 import "./Login.css"
 import google from "../assets/google-fill.svg"
 import { useState } from "react"
-import axios from "../axiosConfig";
+import axios from "../../axiosConfig";
 import Alert from "../Alert/Alert";
 import { Redirect } from "react-router-dom";
 
@@ -55,9 +55,12 @@ export default function Login(props) {
                 .then(data => {
                     setFormState({ state: "success", message: (data.message) });
                 })
+                .catch(error => {
+                    setFormState({ state: "error", message: (error.response.data.message || error.message) });
+                })
         }
         catch (error) {
-            setFormState({ state: "error", message: (error.response.data.messag || error.message) });
+            setFormState({ state: "error", message: error.message });
         }
     }
 

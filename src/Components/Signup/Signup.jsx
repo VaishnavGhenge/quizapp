@@ -3,7 +3,7 @@ import Navbar from "../Navbar/Navbar"
 import { useState } from "react"
 import google from "../assets/google-fill.svg"
 import Alert from "../Alert/Alert"
-import axios from "../axiosConfig"
+import axios from "../../axiosConfig"
 
 export default function Signup() {
     const [formData, setFormData] = useState({ name: "", username: "", password1: "", password2: "" })

@@ -1,10 +1,10 @@
-import Home from './Home/Home'
+import Home from './Components/Home/Home'
 import './App.css'
-import Leaderboard from './Leaderboard/Leaderboard'
-import Question from './Question/Question'
-import Dashboard from './Dashboard/Dashboard'
-import CreateQuiz from './CreateQuiz/CreateQuiz'
-import Signup from './Signup/Signup'
+import Leaderboard from './Components/Leaderboard/Leaderboard'
+import Question from './Components/Question/Question'
+import Dashboard from './Components/Dashboard/Dashboard'
+import CreateQuiz from './Components/CreateQuiz/CreateQuiz'
+import Signup from './Components/Signup/Signup'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
