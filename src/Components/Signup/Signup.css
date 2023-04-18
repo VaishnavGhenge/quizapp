@@ -30,7 +30,7 @@ label {
     min-width: 100%;
 }
 
-.input:hover {
+.input:focus {
     border-color: #8E58E7;
     outline: none;
 }

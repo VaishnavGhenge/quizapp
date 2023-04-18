@@ -153,10 +153,16 @@ label  {
     min-width: 100%;
 }
 
+.input-quizdetails:focus {
+    border-color: #8E58E7;
+    outline: none;
+}
+
 .btn-group-quiz {
     display: flex;
     justify-content: center;
     margin-top: 30px;
+    margin-bottom: 2rem;
 }
 
 .quiz-save {

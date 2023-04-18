@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux"
 import "./Login.css"
 import google from "../assets/google-fill.svg"
 import Alert from "../Alert/Alert"
-import { loginApi } from "../../api/auth"
 import { loginAsync } from "../../Redux/auth"
 
 export default function Login(props) {
@@ -15,9 +14,9 @@ export default function Login(props) {
     const dispatch = useDispatch()
     const state = useSelector(state => state.auth)
 
-    if(state.user) {
+    if (state.user) {
         return <Redirect to="/dashboard" />
-    } 
+    }
 
     function handleChange(event) {
         const { value, name } = event.target
@@ -58,7 +57,7 @@ export default function Login(props) {
             const res = dispatch(loginAsync(loginData.username, loginData.password))
             res
                 .then(res => {
-                    if(res.success) {
+                    if (res.success) {
                         setFormState({ state: "success", message: res.message })
                     } else {
                         setFormState({ state: "error", message: res.message })
