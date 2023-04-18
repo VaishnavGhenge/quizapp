@@ -124,6 +124,80 @@ div.input-group > * {
     margin-right: 5px;
 }
 
+/* Quiz Details */
+.quiz-details-form {
+    max-width: 40vw;
+    margin: auto auto;
+    margin-top: 5vh;
+}
+
+.input-group-quiz {
+    margin-bottom: 15px;
+}
+
+label  {
+    font-size: 13px;
+}
+
+.input-quizdetails {
+    display: block;
+    margin: 2px auto 20px auto;
+    padding: 10px 15px;
+    font-size: 15px;
+    line-height: 1.5;
+    border: 1px solid #D9D9D9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color .15s ease-in-out;
+    outline: none;
+    min-width: 100%;
+}
+
+.btn-group-quiz {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.quiz-save {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #131423;
+    color: white;
+    cursor: pointer;
+    padding: 14px 15px;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-right: 10px;
+    line-height: 1.5;
+}
+
+.quiz-save:disabled {
+    color: gray;
+    cursor: not-allowed;
+}
+
+.quiz-save-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid #131423;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 14px 15px;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.quiz-save-next:disabled {
+    color: gray;
+    cursor: not-allowed;
+  }
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .quiz-details, .create-que-div {

@@ -13,7 +13,7 @@ export default function Home() {
             {page != "/" && <Redirect to={page} />}
             <div className="overlay" style={{ 'display': login ? 'block' : 'none' }} onClick={() => setLogin(false)}></div>
             <Login setLogin={setLogin} display={ login ? 'block' : 'none' } />
-            <Navbar setLogin={setLogin} purpose="home" />
+            <Navbar setLogin={setLogin} />
             <div className="hero">
                 <div className="hero-text">
                     Creating and conducting quiz made easy

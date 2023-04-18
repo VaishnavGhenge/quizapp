@@ -6,10 +6,13 @@ import { logoutAsync } from "../../Redux/auth"
 import { useSelector } from "react-redux"
 import { Redirect } from "react-router-dom"
 import { useDispatch } from "react-redux"
+import { useState } from "react"
 
 export default function Dashboard(props) {
     const state = useSelector(state => state.auth)
+    const [redirect, setRedirect] = useState("")
     const dispatch = useDispatch()
+
     const prevQuiz = [
         {
             'id': 1,
@@ -38,6 +41,11 @@ export default function Dashboard(props) {
         return <Redirect to="/" />
     }
 
+    if(redirect != "") {
+        if(redirect == "create-new")
+            return <Redirect to="/quiz" />
+    }
+
     function handleLogout() {
         console.log(state.user)
         dispatch(logoutAsync(state.user))
@@ -45,11 +53,11 @@ export default function Dashboard(props) {
 
     return (
         <div className="Dashboard">
-            <Navbar purpose="dashboard" />
+            <Navbar />
             <div className="dashboard-content">
                 <div className="dashboard-upper">
                     <div className="create-quiz">
-                        <div className="create-new">
+                        <div className="create-new" onClick={() => setRedirect("create-new")} >
                             <img src={add} alt="grey add icon" className="add-icon" />
                         </div>
                         <p>Create new quiz</p>

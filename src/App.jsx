@@ -5,6 +5,7 @@ import Question from './Components/Question/Question'
 import Dashboard from './Components/Dashboard/Dashboard'
 import CreateQuiz from './Components/CreateQuiz/CreateQuiz'
 import Signup from './Components/Signup/Signup'
+import QuizDetails from './Components/CreateQuiz/QuizDetails'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
@@ -31,6 +32,10 @@ function App() {
 
           <Route exact path="/create-quiz">
             <CreateQuiz />
+          </Route>
+
+          <Route exact path="/quiz">
+            <QuizDetails />
           </Route>
 
           <Route exact path="/signup">

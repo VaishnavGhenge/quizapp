@@ -25,7 +25,7 @@ export default function CreateQuiz() {
 
     return (
         <div className="CreateQuiz">
-            <Navbar purpose="dashboard" />
+            <Navbar />
             <div className="quiz-header">
                 <div className="quiz-details">
                     <h3 className="quiz-title">Sceince quiz</h3>
