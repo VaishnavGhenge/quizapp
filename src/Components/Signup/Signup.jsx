@@ -7,7 +7,7 @@ import axios from "../../axiosConfig"
 import { createUserApi } from "../../api/auth"
 
 export default function Signup() {
-    const [formData, setFormData] = useState({ name: "", username: "", password1: "", password2: "" })
+    const [formData, setFormData] = useState({ name: "", username: "", email: "", password1: "", password2: "" })
     const [formState, setFormState] = useState({ state: "normal", messages: {} })
     const [usernameState, setUsernameState] = useState({ state: "normal", message: "Username should contain atleast 4 characters" })
 
@@ -125,6 +125,10 @@ export default function Signup() {
                         <label htmlFor="username">Username</label>
                         <input type="text" name="username" value={formData.username} onChange={handleChange} id="username" className="input" />
                         <span className={`input-rule inp-${usernameState.state}`}>{usernameState.message}</span>
+                    </div>
+                    <div className="inp-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="text" name="email" value={formData.email} onChange={handleChange} id="email" className="input" />
                     </div>
                     <div className="inp-group">
                         <label htmlFor="password1">Password</label>
