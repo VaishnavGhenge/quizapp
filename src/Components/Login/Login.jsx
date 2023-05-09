@@ -8,7 +8,7 @@ import Alert from "../Alert/Alert"
 import { loginAsync } from "../../Redux/auth"
 
 export default function Login(props) {
-    const [loginData, setLoginData] = useState({ username: "", password: "" })
+    const [loginData, setLoginData] = useState({ login_username: "", password: "" })
     const [formState, setFormState] = useState({ state: "normal", message: "" })
     const [redirect, setRedirect] = useState(false)
     const dispatch = useDispatch()
@@ -28,8 +28,8 @@ export default function Login(props) {
     }
 
     function validateForm() {
-        // username should not be empty
-        if (loginData.username.length === "") {
+        // login_username should not be empty
+        if (loginData.login_username.length === "") {
             setFormState({ state: "warning", message: "Username is required" })
             return false
         }
@@ -54,7 +54,7 @@ export default function Login(props) {
         if (!validateForm()) return
 
         try {
-            const res = dispatch(loginAsync(loginData.username, loginData.password))
+            const res = dispatch(loginAsync(loginData.login_username, loginData.password))
             res
                 .then(res => {
                     if (res.success) {
@@ -106,14 +106,14 @@ export default function Login(props) {
                     >
                         <div className="input-group">
                             <div className="login-inp-group">
-                                <label htmlFor="username">Username</label>
+                                <label htmlFor="login_username">Username</label>
                                 <input
                                     type="text"
-                                    name="username"
-                                    id="username"
+                                    name="login_username"
+                                    id="login_username"
                                     className="input-box"
                                     onChange={handleChange}
-                                    value={loginData.username}
+                                    value={loginData.login_username}
                                 />
                             </div>
                             <div className="login-inp-group">
@@ -129,7 +129,7 @@ export default function Login(props) {
                             </div>
                         </div>
                         <div className="btn-div">
-                            <button type="submit" className="btn-login-form">
+                            <button type="submit" className="btn-login-form" disabled={formState.state === "loading"}>
                                 {formState.state === "loading" ? (
                                     <span className="loader"></span>
                                 ) : (

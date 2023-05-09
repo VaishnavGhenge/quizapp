@@ -47,6 +47,10 @@ label {
   color: #ff3333;
 }
 
+.inp-default {
+  color: #131423;
+}
+
 .signup-button-group {
     display: flex;
     flex-direction: column;

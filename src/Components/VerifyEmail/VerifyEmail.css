@@ -1,0 +1,72 @@
+.verify-email {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    color: #131423;
+}
+
+.verify-prompt {
+    margin-bottom: 1rem;
+    transform: translateY(-20%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    text-align: center;
+}
+
+.verify-title {
+    margin-bottom: 2rem;
+}
+
+.verify-body {
+    margin-bottom: 3rem;
+}
+
+.email-text {
+    color: #009900;
+}
+
+.resend-success {
+    color: #009900;
+    margin-bottom: 1.5rem;
+}
+
+.resend-error {
+    color: #ff3333;
+    margin-bottom: 1.5rem;
+}
+
+.resend-default {
+    color: #131423;
+    margin-bottom: 1.5rem;
+}
+
+.verify-success {
+    color: #009900;
+    margin-bottom: 1.5rem;
+}
+
+.verify-error {
+    color: #ff3333;
+    margin-bottom: 1.5rem;
+}
+
+.verify-default {
+    color: #131423;
+    margin-bottom: 1.5rem;
+}
+
+.btn-resend {
+    background-color: #131423;
+    color: white;
+    cursor: pointer;
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+}
