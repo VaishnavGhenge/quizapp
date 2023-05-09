@@ -4,51 +4,40 @@ import add from "../assets/add.svg"
 import download from "../assets/download-line.svg"
 import { logoutAsync } from "../../Redux/auth"
 import { useSelector } from "react-redux"
-import { Redirect } from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getUserAllQuizzesApi } from "../../api/quiz"
 
 export default function Dashboard(props) {
     const state = useSelector(state => state.auth)
     const [redirect, setRedirect] = useState("")
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const [userQuizes, setUserQuizes] = useState([]);
 
-    const prevQuiz = [
-        {
-            'id': 1,
-            'name': 'Math quiz',
-            'result_file': 'result.csv'
-        },
-        {
-            'id': 2,
-            'name': 'Science quiz',
-            'result_file': 'result.csv'
-        },
-        {
-            'id': 3,
-            'name': 'Movie quiz',
-            'result_file': 'result.csv'
-        },
-        {
-            'id': 4,
-            'name': 'Science-II quiz',
-            'result_file': 'result.csv'
-        }
-
-    ]
-
-    if(!state.user) {
-        return <Redirect to="/" />
+    if (!state.user) {
+        history.push("/");
     }
 
-    if(redirect != "") {
-        if(redirect == "create-new")
-            return <Redirect to="/quiz" />
+    if (redirect != "") {
+        if (redirect == "create-new")
+            history.push("/create/quiz");
     }
+
+    useEffect(() => {
+        getUserAllQuizzesApi(state.token)
+            .then(res => {
+                setUserQuizes(res.data.quizes);
+            })
+            .catch(err => {
+                console.log(err);
+                alert("Problem occured while fetching quizes");
+            })
+    }, [])
 
     function handleLogout() {
-        console.log(state.user)
-        dispatch(logoutAsync(state.user))
+        dispatch(logoutAsync(state.user));
     }
 
     return (
@@ -66,8 +55,8 @@ export default function Dashboard(props) {
 
                 <div className="dashboard-lower">
                     <div className="quiz-results">
-                        {prevQuiz.map(quiz => <div key={quiz.id} className="pre-result">
-                            <span>{quiz.name}</span>
+                        {userQuizes.map(quiz => <div key={quiz.quizId} className="pre-result">
+                            <span className="quiz-open" onClick={() => history.push(`/create/quiz/${quiz.quizId}`)}>{quiz.name}</span>
                             <img className="icon" src={download} alt="download icon" />
                         </div>)}
                         <div className="pre-result" onClick={handleLogout}>

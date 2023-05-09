@@ -6,6 +6,8 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import CreateQuiz from './Components/CreateQuiz/CreateQuiz'
 import Signup from './Components/Signup/Signup'
 import QuizDetails from './Components/CreateQuiz/QuizDetails'
+import VerifyEmail from './Components/VerifyEmail/VerifyEmail'
+import CheckEmailToken from './Components/VerifyEmail/CheckEmailToken'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
@@ -30,16 +32,24 @@ function App() {
             <Dashboard />
           </Route>
 
-          <Route exact path="/create-quiz">
+          <Route exact path="/create/quiz/:quizId">
             <CreateQuiz />
           </Route>
 
-          <Route exact path="/quiz">
+          <Route exact path="/create/quiz">
             <QuizDetails />
           </Route>
 
           <Route exact path="/signup">
             <Signup />
+          </Route>
+
+          <Route exact path="/verify-email">
+            <VerifyEmail />
+          </Route>
+
+          <Route exact path="/verify-email/:code">
+            <CheckEmailToken />
           </Route>
 
         </Switch>

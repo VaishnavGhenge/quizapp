@@ -17,7 +17,12 @@
     font-size: 20px;
 }
 
-.btn-login {
+.navbtn-group {
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
     background-color: #131423;
     color: white;
     cursor: pointer;
@@ -25,6 +30,10 @@
     border-radius: 5px;
     font-size: 14px;
     border: none;
+}
+
+.nav-btn:first-child {
+    margin-right: 5px;
 }
 
 .dropdown {

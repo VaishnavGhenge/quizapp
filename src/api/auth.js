@@ -11,11 +11,12 @@ const logoutApi = async (username) => {
     return await axios.get(`users/logout/${username}`);
 };
 
-const createUserApi = async ({ name, username, password }) => {
+const createUserApi = async ({ name, username, password, email }) => {
     return await axios.post('users/create/', {
         name,
         username,
-        password
+        password,
+        email
     });
 };
 
