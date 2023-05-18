@@ -20,4 +20,12 @@ const getUserAllQuizzesApi = async (token) => {
     return await axios.get('/quizzes/get/user/all', { headers: { authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } });
 }
 
-export { getQuizApi, createQuizApi, getUserAllQuizzesApi };
+const deleteQuizApi = async (quizId, token) => {
+    return await axios.delete('/quizzes/delete/' + quizId, { headers: { authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } });
+}
+
+const getQuizQuestionsApi = async (quizId, token) => {
+    return await axios.get('/quizzes/get/' + quizId + '/questions', { headers: { authorization: `Bearer ${token}`, 'Content-Type': 'application/json' } });
+};
+
+export { getQuizApi, createQuizApi, getUserAllQuizzesApi, deleteQuizApi, getQuizQuestionsApi };

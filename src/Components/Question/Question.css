@@ -62,6 +62,10 @@
     background-color: #f0e9fc;
 }
 
+.selected {
+    background-color: #f0e9fc;
+}
+
 .option-no {
     font-weight: 500;
     margin-right: 5px;
@@ -81,6 +85,7 @@
     padding: 8px 30px;
     border-radius: 5px;
     line-height: 2;
+    cursor: pointer;
 }
 
 /* .arrow-icon {

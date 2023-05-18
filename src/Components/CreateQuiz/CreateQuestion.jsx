@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { createQuestionApi, updateQuestionApi } from "../../api/question"
 import { useSelector } from "react-redux"
 import { useHistory } from "react-router-dom"
+import Alert from "../Alert/Alert"
 
 export default function CreateQuestion(props) {
     const [data, setQuestion] = useState(props.que);
@@ -159,6 +160,7 @@ export default function CreateQuestion(props) {
                 })
                 .catch(err => {
                     setFormMessage(formMessage => {
+                        // console.log(err);
                         return {
                             ...formMessage,
                             status: 'error',
@@ -169,7 +171,7 @@ export default function CreateQuestion(props) {
         } else {
             updateQuestionApi(data.questionId, data.question, data.options, data.answer, state.token)
                 .then(res => {
-                    console.log(res);
+                    // console.log(res);
                     setFormMessage(formMessage => {
                         return {
                             ...formMessage,
@@ -180,7 +182,7 @@ export default function CreateQuestion(props) {
                 }
                 )
                 .catch(err => {
-                    console.log(err);
+                    // console.log(err);
                     setFormMessage(formMessage => {
                         return {
                             ...formMessage,
@@ -195,6 +197,7 @@ export default function CreateQuestion(props) {
 
     return (
         <div className="CreateQuestion">
+            {formMessage.status == 'error' && <Alert type="error" messages={{ form: formMessage.messages.form }} />}
             <form onSubmit={handleSubmit}>
                 <div className="input-group">
                     <label htmlFor={`question${data.questionId || data.queId}`} className="input-label">Question</label>
@@ -243,6 +246,7 @@ export default function CreateQuestion(props) {
                                 {(formMessage.status === 'success' || syncedQue) && <span>Saved</span>}
                                 {formMessage.status === 'loading' && <span className="loader"></span>}
                                 {(formMessage.status === 'default' && !syncedQue) && <span>Save Question</span>}
+                                {(formMessage.status === 'error' && !syncedQue) && <span>Save Question</span>}
                             </button>
                         </div>
                     </div>

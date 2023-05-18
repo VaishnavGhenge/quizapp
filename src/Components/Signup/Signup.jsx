@@ -7,8 +7,9 @@ import axios from "../../axiosConfig"
 import { createUserApi } from "../../api/auth"
 import Login from "../Login/Login"
 import { useSelector, useDispatch } from "react-redux"
-import { Redirect } from "react-router-dom"
+import { Redirect, useParams } from "react-router-dom"
 import { setEmailAsync } from "../../Redux/verifyEmail"
+import { useHistory } from "react-router-dom"
 
 export default function Signup() {
     const state = useSelector(state => state.auth)
@@ -23,9 +24,16 @@ export default function Signup() {
     });
     const [redirectLogin, setRedirectLogin] = useState(false);
     const dispatch = useDispatch();
+    const redirect = useParams().redirect || '';
+    const history = useHistory();
 
     if (state.user) {
-        return <Redirect to="/dashboard" />
+        if(redirect != '') {
+            history.push(redirect);
+        }
+        else {
+            return <Redirect to="/dashboard" />
+        }
     }
 
     if(formState.state === "success") {

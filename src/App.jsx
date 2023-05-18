@@ -20,11 +20,11 @@ function App() {
             <Home />
           </Route>
 
-          <Route exact path="/question">
+          <Route exact path="/quiz/:quizId">
             <Question />
           </Route>
 
-          <Route exact path="/leaderboard">
+          <Route exact path="/quiz/:quizId/result">
             <Leaderboard />
           </Route>
 

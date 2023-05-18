@@ -3,9 +3,9 @@ const Participant = (props) => {
 
     return (
         <tr className='row'>
-            <td>#{props.pdetails.rank}</td>
-            <td>{props.pdetails.name}</td>
-            <td className='pts'>{props.pdetails.points}</td>
+            <td>#{props.rank}</td>
+            <td>{props.name}</td>
+            <td className='pts'>{props.points}</td>
         </tr>
     )
 
