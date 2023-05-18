@@ -65,6 +65,16 @@
 
 .pre-result .icon {
     width: 14px;
+    margin-right: 10px;
+}
+
+.pre-result .trash-icon {
+    width: 14px;
+    margin-right: 10px;
+}
+
+.pre-result .share-icon {
+    width: 14px;
 }
 
 .quiz-open:hover {

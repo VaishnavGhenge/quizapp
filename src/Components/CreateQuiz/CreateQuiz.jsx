@@ -8,7 +8,9 @@ import { useHistory, useParams } from "react-router-dom"
 import { getQuizApi } from "../../api/quiz"
 import Alert from "../Alert/Alert"
 import backBtn from "../assets/icons8-arrow-pointing-left-30.png"
-import shareBtn from "../assets/icons8-share.svg"
+import shareBtn from "../assets/icons8-link-30.png"
+import toast, { Toaster } from 'react-hot-toast';
+import { BASE_URL } from "../../config"
 
 export default function CreateQuiz() {
     const [questions, setQuestions] = useState([]);
@@ -45,8 +47,14 @@ export default function CreateQuiz() {
         history.push("/dashboard");
     }
 
+    function copyToClip() {
+        navigator.clipboard.writeText(`${BASE_URL}/quiz/${quizId}`);
+        toast.success("Link copied to clipboard");
+    }
+
     return (
         <div className="CreateQuiz">
+            <Toaster />
             <Navbar />
             {pageMessage.status === 'error' ?
                 <div className="quiz-header">
@@ -61,7 +69,7 @@ export default function CreateQuiz() {
                             </div>
                             <h3 className="quiz-title">{quiz.name}</h3>
                             <div>
-                                <img className="quiz-sharebtn" src={shareBtn} alt="shareQuiz" />
+                                <img className="quiz-sharebtn" src={shareBtn} alt="shareQuiz" onClick={copyToClip} />
                             </div>
                         </div>
                     </div>

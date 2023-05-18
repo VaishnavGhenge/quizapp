@@ -54,7 +54,7 @@ export default function QuizDetails() {
                 return;
             }
 
-            console.log(quizName.toString(), quizDescription.toString(), quizDateObj);
+            // console.log(quizName.toString(), quizDescription.toString(), quizDateObj);
 
             createQuizApi(quizName.toString(), quizDescription.toString(), quizDateObj, state.token)
                 .then(res => {
@@ -62,12 +62,12 @@ export default function QuizDetails() {
                     // setFormStatus({ status: 'success', message: 'Quiz details saved successfully.' });
                 })
                 .catch(err => {
-                    console.log(err);
+                    // console.log(err);
                     setFormStatus({ status: 'error', message: err.response.data.message || err.message || 'Error saving quiz details. Please try again.' })
                 })
         } catch (error) {
             setFormStatus({ status: 'error', message: 'Error saving quiz details. Please try again.' });
-            console.log(error);
+            // console.log(error);
         }
     }
 
@@ -83,11 +83,11 @@ export default function QuizDetails() {
                         <input type="text" name="quizName" id="quiz-name" className="input-quizdetails" onChange={handleChange} />
                     </div>
                     <div className="input-group-quiz">
-                        <label htmlFor="quiz-date">Date</label>
+                        <label htmlFor="quiz-date">Choose day of quiz</label>
                         <input type="date" name="quizDate" id="quiz-date" className="input-quizdetails" onChange={handleChange} />
                     </div>
                     <div className="input-group-quiz">
-                        <label htmlFor="quiz-time">Time</label>
+                        <label htmlFor="quiz-time">Choose start time</label>
                         <input type="time" name="quizTime" id="quiz-time" className="input-quizdetails" onChange={handleChange} />
                     </div>
                     <div className="input-group-quiz">
@@ -96,7 +96,7 @@ export default function QuizDetails() {
                     </div>
                     <div className="btn-group-quiz">
                         <button type="submit" className="quiz-save">Save</button>
-                        <button type="button" className="quiz-save-next">Next</button>
+                        {/* <button type="button" className="quiz-save-next">Next</button> */}
                     </div>
                 </form>
             </div>
